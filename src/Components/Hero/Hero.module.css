@@ -1,0 +1,192 @@
+.wrapper {
+    display: flex;
+    align-items:baseline ;
+    justify-content: center;
+    position: relative;
+    width: 32rem;       /* slightly larger to avoid clipping */
+    height: 32rem;
+    overflow: visible; 
+    margin: 0 auto;
+}
+
+.Container{
+    padding: 0rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+
+.wrapper > img {
+    width: 25rem;
+    position: absolute ;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    z-index: 1;
+    background-color: transparent;
+}
+.bluecircle {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    background: linear-gradient(135.7deg, #0bb5ff 14.89%, #6dd3fe 83.81%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+.h_side{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+.text1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: min-content;
+    display: block;
+}
+.text2{
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    color: #000;
+}
+.text2>:first-child{
+font-weight: 800;
+font-size: 2.5rem;
+}
+.text2>:nth-child(2){
+    display: block;
+}
+.traffic{
+    display: flex;
+    align-items: right;
+    text-align: right;
+    flex-direction: column;
+}
+.traffic>:first-child{
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+.customers{
+    display: flex;
+   text-align: right;
+    flex-direction: column;
+}
+.customers>:first-child{
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-align: right;
+}
+.Cart2{
+    position: absolute;
+    bottom: 25%;
+    right: -50%;
+    display: flex;
+    gap: 1rem;
+    z-index: 1;
+    align-items: center;
+}
+.Cart2 > svg{
+    width: 30px;
+    height: 30px;
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    border: 6px solid var(--black);
+}
+
+.Signup{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: white;
+    padding: 10px 16px;
+    font-size: 0.8rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow1);
+    color: black;
+}
+.Signup>:first-child{
+    display: block;
+    width: 6rem;
+    background-color: white;
+}
+.Signup>:nth-child(2){
+    border-radius: 50%;
+   width: 20px;
+    height: 20px;
+    padding: 5px;
+    display: flex;
+    border: 1px solid var(--black);
+    background-color: white;
+    align-items: center;
+    
+}
+
+.Signup svg {
+    background: white;
+    width: 25px;
+    height: 25px;
+}
+@media screen and (max-width: 865px) {
+    .text1,.text2>span:nth-of-type(2){
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+    .text2>span:nth-of-type(1),
+    .traffic>span:nth-child(1),
+    .customers>span:nth-child(1) {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    .bluecircle{
+        position: absolute;
+        width: 70%;
+        height: 100%;
+    }
+    .wrapper>img{
+        width: 70%;
+        height: 100%;
+    }
+    .Container{
+        grid-template-areas: 'left center center'
+        'right right right';
+    }
+    .Container>:first-child{
+        grid-area: left;
+        grid-template-rows: none;
+        gap: 8rem;
+    }
+    .Container>:nth-child(2){
+        grid-area: center;
+    }
+    .Container>:nth-child(3){
+        grid-area: right;
+        display: flex;
+        justify-content: space-around;
+        margin: 2rem 0rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .bluecircle{
+        width: 16rem;
+        top: 0;
+        height: 72%;
+
+    }
+    .wrapper>img{
+        width: 12rem;
+        height: 15rem;
+        top: 3rem;
+    }
+    .Cart2{
+        transform: scale(0.7);
+        right: 2rem;
+    }
+}
